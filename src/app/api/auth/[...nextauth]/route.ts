@@ -64,7 +64,6 @@ const options: NextAuthOptions = {
     },
 
   },
-  secret: 'IamVeryHandsome'
 };
 const handler = NextAuth(options);
 

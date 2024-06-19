@@ -42,6 +42,8 @@ const options: NextAuthOptions = {
     },
     async signIn({ profile }) {
       try {
+        console.log(db.user)
+
         //check if user already exists
         const isUserExists = await db.user.findUnique({
           where: { email: profile?.email }

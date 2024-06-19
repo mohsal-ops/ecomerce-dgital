@@ -42,14 +42,14 @@ const options: NextAuthOptions = {
     },
     async signIn({ profile }) {
       try {
-        console.log(db.user)
-
+        
         //check if user already exists
         const isUserExists = await db.user.findUnique({
           where: { email: profile?.email }
         })
+        console.log(isUserExists)
         // if not, create a new document and save user in MongoDB
-        if (!isUserExists) {
+        if (isUserExists==null ) {
           await db.user.create({
             data: {
               email: profile?.email as string,

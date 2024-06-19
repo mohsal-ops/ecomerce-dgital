@@ -48,7 +48,7 @@ const options: NextAuthOptions = {
         })
         // if not, create a new document and save user in MongoDB
         if (!isUserExists) {
-          const newUser = await db.user.create({
+          await db.user.create({
             data: {
               email: profile?.email as string,
 

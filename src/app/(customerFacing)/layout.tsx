@@ -7,7 +7,7 @@ export default function Customerlayout({
 }>) {
   const dynamic = "force-dynamic";
   return (
-    <div className="w-full flex flex-col overflow-hidden h-screen">
+    <div className="w-full flex flex-col overflow-hidden min-h-screen">
       <TopNavBar />
       <div className="flex sm:flex-row flex-col overflow-hidden ">
         <NavBarOrSideBar />

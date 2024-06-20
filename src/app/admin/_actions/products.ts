@@ -44,7 +44,7 @@ export async function AddProduct (prevSatate : unknown , formData : FormData){
     //same thing for thre imagre 
     
     await fs.mkdir("public/products",{recursive : true})
-    const imagePath = `/products/${crypto.randomUUID()}-${data.image.name}`
+  const imagePath = `public/products/${crypto.randomUUID()}-${data.image.name}`
     await fs.writeFile(`public${imagePath}` , Buffer.from(await data.image.arrayBuffer()))
     
     await db.product.create({

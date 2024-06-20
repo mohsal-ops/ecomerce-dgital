@@ -33,7 +33,7 @@ import { formatCurrency, formatNumber } from "@/lib/formatters";
     return {
       userCount,
       averageValurPerUser : userCount === 0 ? 0 : (orderData._sum.pricePaidInCents || 0 ) / userCount/100
-      //  || 0 means set to 0 by default 
+      //  || zero means set to 0 by default 
     }
         
   }
@@ -44,7 +44,7 @@ import { formatCurrency, formatNumber } from "@/lib/formatters";
 
     ])
     return {
-      active, inactive 
+      active, inactive
     }
   }
   
@@ -56,56 +56,6 @@ export default async function AdminDashbord() {
     getProductData()
   ])
 
-  const data = [
-    {
-      name: "Jan",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Feb",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Mar",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Apr",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "May",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Jun",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Jul",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Aug",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Sep",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Oct",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Nov",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-      name: "Dec",
-      total: Math.floor(Math.random() * 5000) + 1000,
-    },
-  ]
    
     return (
      <div className="grid grid-flow-dense grid-rows-2 grid-cols-1 md:grd-cols-2 lg:grid-cols-3 gap-4">

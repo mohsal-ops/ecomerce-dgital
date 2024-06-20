@@ -56,7 +56,7 @@ export async function AddProduct (prevSatate : unknown , formData : FormData){
         filePath,
         imagePath,
     }
-    })
+    }).then(()=>console.log("PRODUCT HSA BEEN CREATED"))
 
     revalidatePath("/")
     revalidatePath("/products")

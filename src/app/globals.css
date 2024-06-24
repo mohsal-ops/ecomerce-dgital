@@ -4,6 +4,12 @@
 
 
 
+.gradient-text {
+  background: linear-gradient(90deg, #24d0ff 0%, #7f00ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

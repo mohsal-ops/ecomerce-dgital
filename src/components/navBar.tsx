@@ -17,6 +17,7 @@ import { IoMdBookmark, IoMdSearch } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { TbUserFilled } from "react-icons/tb";
+import { FaRegUser } from "react-icons/fa";
 import { Command, CommandGroup, CommandItem, CommandList } from "./ui/command";
 import { SearchBar } from "./searchBar";
 import db from "@/db/db";
@@ -51,7 +52,7 @@ export function SideBar() {
   return (
     <main className="flex flex-col gap-1 h-screen overflow-auto min-w-72 p-2 pl-0 pt-0 sm:pt-2 scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-100">
       <div className=" w-full ">
-        <Card className="w-full h-full flex  flex-col justify-between p-3 rounded-l-none ">
+        <Card className="w-full h-full flex  flex-col justify-between px-3 py-2 rounded-l-none ">
           <div className="flex items-center justify-between space-x-4">
             <Avatar className="h-12 w-12">
               <AvatarImage src="/avatars/04.png" alt="Image" />
@@ -81,10 +82,15 @@ export function SideBar() {
                     <p className="text-sm text-muted-foreground">
                       {session?.user?.email as string}
                     </p>
-                    <div className="flex justify-end">
+                    <div className="flex justify-end ">
                       {session?.user && (
-                        <div className="mt-3 ml-1">
-                          <Button onClick={() => signOut()}>Sign out</Button>
+                        <div className="mt-3 ml-1 ">
+                          <Button
+                            onClick={() => signOut()}
+                            className="bg-violet-600"
+                          >
+                            Sign out
+                          </Button>
                         </div>
                       )}
                     </div>
@@ -93,7 +99,7 @@ export function SideBar() {
               </Popover>
             ) : (
               <Button
-                className="rounded-full text-sm font-medium h-12 px-3"
+                className=" text-sm font-medium  px-3 bg-violet-600 rounded-lg h-10"
                 onClick={() => signIn("google")}
               >
                 Sign In
@@ -193,9 +199,7 @@ export function TopNavBar() {
         />
       </div>
       <div className="flex flex-row  h-full  items-center">
-        <p className=" fill-inherit  ml-4 font-black text-accent-foreground text-3xl">
-          Udemo
-        </p>
+        <p className="gradient-text ml-4 font-black text-3xl">Udemo</p>
       </div>
       <div
         className={` flex gap-4 items-center justify-end  ${
@@ -220,7 +224,9 @@ export function TopNavBar() {
         >
           <Avatar>
             <AvatarImage src={session?.user.image as string} alt="Image" />
-            <AvatarFallback>user</AvatarFallback>
+            <AvatarFallback>
+              <FaRegUser className="text-gray-500 h-8"  />
+            </AvatarFallback>
           </Avatar>
         </Link>
       </div>

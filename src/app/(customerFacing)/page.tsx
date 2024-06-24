@@ -36,10 +36,11 @@ export default async function  HomePage() {
 
   return (
     <>
-      <div className="m-2 rounded-2xl flex flex-col items-center space-y-10   md:gap-0 bg-gradient-to-r  from-cyan-400 to-blue-800 h-[470px] ">
+      <div className="m-2 rounded-2xl flex flex-col items-center space-y-10   md:gap-0 bg-gradient-to-r from-sky-500 via-blue-500 to-purple-700 h-[470px] ">
         <span className="flex flex-col gap-4 items-center  justify-center h-full w-[80%]   ">
           <p className=" scroll-m-20 text-5xl font-black   lg:text-6xl ">
-            <span className="text-4xl text-white" >Welcome to Udemo:</span> <br />
+            <span className="text-4xl text-white">Welcome to Udemo:</span>{" "}
+            <br />
             Online services & courses
           </p>
           <p className="text-sm font-medium">

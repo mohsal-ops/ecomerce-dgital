@@ -20,10 +20,11 @@ export async function POST(req: NextRequest) {
     await req.text(),req.headers.get("stripe-signature") as string,
     process.env.STRIPE_WEBHOOK_SECRET as string
   )
-
+console.log("webhook enterred")
 
   if (event.type === "charge.succeeded" ) {
-    
+    console.log("charge succeeded")
+
     const charge =  event.data.object as Stripe.Charge
     const productId =  charge.metadata.productId
     const email = charge.billing_details.email as string
@@ -76,3 +77,5 @@ export async function POST(req: NextRequest) {
 
 }
 }
+
+

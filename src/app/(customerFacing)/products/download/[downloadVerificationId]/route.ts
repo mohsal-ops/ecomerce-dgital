@@ -15,7 +15,7 @@ export async function GET(req : NextRequest , {
 
         })
         if(data == null ) { 
-            return NextResponse.redirect(new URL("/product/download/expired",req.url))
+            return Response.redirect(new URL("/product/download/expired",req.url))
 
         }
     
@@ -24,7 +24,7 @@ export async function GET(req : NextRequest , {
         const file = await fs.readFile(data.product.filePath)
         const extention= data.product.filePath.split(".").pop()
         
-        return new NextResponse(file , {
+        return new Response(file , {
             headers:{
                 "Content-Disposition":`attachment; filename ="${data.product.name}.${extention}"`,
                 "Content-Length" : size.toString()

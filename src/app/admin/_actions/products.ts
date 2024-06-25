@@ -39,7 +39,7 @@ export async function AddProduct (prevSatate : unknown , formData : FormData){
     //make the path for my file with an id 
     const filePath = `products/${crypto.randomUUID()}-${data.file.name}`
     //save my file diractory 
-    await fs.writeFile(filePath , Buffer.from(await data.file.arrayBuffer()))
+    await fs.writeFile(filePath, Buffer.from(await data.file.arrayBuffer()))
     
     //same thing for thre imagre 
     
@@ -137,8 +137,8 @@ export const deleteFunction = async (id:string ) =>{
         where:{id},
     })
     if(product == null )return notFound()
-    await fs.unlink(product.filePath)
-  await fs.unlink(`public${product.imagePath}`)
+    await fs.unlink(product.filePath).then(()=>console.log)
+    await fs.unlink(`public${product.imagePath}`)
   
     revalidatePath("/")
     revalidatePath("/products")

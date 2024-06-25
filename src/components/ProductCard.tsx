@@ -56,7 +56,7 @@ export default function ProductCard({
   };
   return (
     <div>
-      <Card className="flex overflow-hidden flex-col " key={id}>
+      <Card className="flex overflow-hidden flex-col min-h- " key={id}>
         <div className="relative w-full h-auto aspect-video">
           <Image src={imagePath} fill alt={name} />
         </div>

@@ -56,13 +56,13 @@ export default function ProductCard({
   };
   return (
     <div>
-      <Card className="flex overflow-hidden flex-col min-h- " key={id}>
+      <Card className="flex overflow-hidden flex-col " key={id}>
         <div className="relative w-full h-auto aspect-video">
           <Image src={imagePath} fill alt={name} />
         </div>
-        <CardHeader className="flex flex-row items-start justify-between">
-          <div className="flex flex-col gap-2">
-            <CardTitle>{name}</CardTitle>
+        <CardHeader className="flex flex-row  pb-2 justify-between" >
+          <div className="flex flex-col gap-2 w-[80%] ">
+            <CardTitle className="h-10">{name}</CardTitle>
             <span>{formatCurrency(priceInCents / 100)}</span>
           </div>
           <div className="flex items-center w-8 border rounded-full h-8 p-1 hover:bg-neutral-200 hover:cursor-pointer">
@@ -80,7 +80,7 @@ export default function ProductCard({
           </div>
         </CardHeader>
         <CardContent>
-          <CardDescription>{description}</CardDescription>
+          <CardDescription>{description.slice(0,35)+".."}</CardDescription>
         </CardContent>
         <CardFooter>
           <Button asChild size="lg" className="w-full">

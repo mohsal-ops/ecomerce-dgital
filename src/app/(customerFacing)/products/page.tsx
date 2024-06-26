@@ -21,7 +21,7 @@ import { ProductSuspense } from "./_components/productsSuspense";
 export default function Page() {
   return (
     <div
-      className=" mb-4 mt-3 space-y-5 lg:space-y-2  px-5 sm:px-3 min-h-dvh"
+      className="mt-3  flex flex-col justify-center space-y-5 lg:space-y-2  px-5 sm:px-3 "
       key={uuid()}
     >
       <Suspense
@@ -79,8 +79,8 @@ function ProductGridSectionp() {
 
 
   return (
-    <>
-      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-2 pb-10">
+    <div className="flex flex-col justify-center">
+      <div className="grid grid-cols-1 w-full  md:grid-cols-2 lg:grid-cols-3 gap-2 ">
         <Suspense
           fallback={
             <>
@@ -92,28 +92,28 @@ function ProductGridSectionp() {
         >
           <ProductSuspense products={products} />
         </Suspense>
-        <div className="flex h-32 items-start">
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious
-                  className={`${page <= 1 && "pointer-events-none opacity-25"}`}
-                  href={`/products?page=${page > 1 ? page - 1 : 1}`}
-                />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationNext
-                  href={`/products?page=${page + 1}`}
-                  className={`${
-                    quantity === 0 && "pointer-events-none opacity-25"
-                  }`}
-                />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
-        </div>
       </div>
-    </>
+      <div className="flex items-center h-20  justify-center ">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                className={`${page <= 1 && "pointer-events-none opacity-25"}`}
+                href={`/products?page=${page > 1 ? page - 1 : 1}`}
+              />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext
+                href={`/products?page=${page + 1}`}
+                className={`${
+                  quantity === 0 && "pointer-events-none opacity-25"
+                }`}
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+    </div>
   );
 }
 
